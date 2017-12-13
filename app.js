@@ -22,9 +22,20 @@
 // ReactDOM.render(<GroceryListItems items={['apple', 'broccoli', 'steak']} />, document.getElementById("app"));
 
 
-var GroceryItem = (props) => (
-  <li>{props.item}</li>
-);
+class GroceryItem extends React.Component { 
+  constructor(props) {
+    super(props)
+    this.state = {
+      bought: false,
+    };
+  }
+
+  render() {
+    return (
+      <li>{this.props.item}</li>
+    );
+  }
+};
 
 
 class GroceryListItems extends React.Component {
@@ -41,5 +52,6 @@ class GroceryListItems extends React.Component {
       </ul>
     )
   }
-}
+};
+
 ReactDOM.render(<GroceryListItems items={['apple', 'broccoli', 'steak']} />, document.getElementById("app"));
