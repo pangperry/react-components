@@ -30,9 +30,18 @@ class GroceryItem extends React.Component {
     };
   }
 
+  onListItemClick() {
+    this.setState({
+      bought: !this.state.bought
+    });
+  }
+
   render() {
+    var style = {
+      color: this.state.bought ? 'red' : 'black'
+    };
     return (
-      <li>{this.props.item}</li>
+      <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.item}</li>
     );
   }
 };
