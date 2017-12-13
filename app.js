@@ -30,7 +30,7 @@ class GroceryItem extends React.Component {
     };
   }
 
-  onListItemClick() {
+  onListItemHover() {
     this.setState({
       bought: !this.state.bought
     });
@@ -38,10 +38,10 @@ class GroceryItem extends React.Component {
 
   render() {
     var style = {
-      color: this.state.bought ? 'red' : 'black'
+      fontWeight: this.state.bought ? 'bold' : 'normal'
     };
     return (
-      <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.item}</li>
+      <li style={style} onMouseEnter={this.onListItemHover.bind(this)} onMouseLeave={this.onListItemHover.bind(this)}>{this.props.item}</li>
     );
   }
 };
